@@ -1,0 +1,27 @@
+<game>
+  <div id="tipp">Tip: Press the "Esc Key" to reset the colors!</div>
+  <div class="game-container">
+    <button style="background-color: red;">A</button>
+    <button style="background-color: blue;">B</button>
+    <button style="background-color: green;">C</button>
+    <button style="background-color: yellow;">D</button>
+    <button style="background-color: orange;">E</button>
+    <button style="background-color: purple;">F</button>
+    <button style="background-color: pink;">G</button>
+    <button style="background-color: teal;">H</button>
+    <button style="background-color: gray;">I</button>
+  </div>
+</game>
+
+<script>
+  // Add an event listener for the "Esc" key to reset button colors
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const buttons = document.querySelectorAll('.game-container:last-of-type button');
+      buttons.forEach((button) => {
+        button.style.backgroundColor = 'white'; // Reset to white background
+        button.style.color = 'black'; // Ensure text is visible
+      });
+    }
+  });
+</script>

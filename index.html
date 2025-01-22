@@ -6,7 +6,6 @@
   <title>Keyboard Navigation</title>
   <style>
     body {
-
       margin: 0;
       font-family: Arial, sans-serif;
       display: flex;
@@ -21,7 +20,7 @@
     }
 
     #intro {
-      font-size: 5rem;
+      font-size: 4rem;
       font-weight: bold;
       text-align: center;
       display: flex;
@@ -32,7 +31,7 @@
     }
 
     #typing {
-      border-right: 3px solid rgb(255, 255, 255);
+      border-right: 3px solid yellow;
       white-space: nowrap;
       overflow: hidden;
       width: 0;
@@ -73,11 +72,11 @@
     #content {
       display: none;
       color: white;
-      margin-top: 35vh;
+      margin-top: 270vh;
       margin-bottom: 20vh;
       margin-left: auto;
       margin-right: auto;
-      max-width: 80%;
+      max-width: 90%;
       text-align: justify;
     }
     figure {
@@ -96,27 +95,130 @@
     }
     
     figcaption {
-      font-size: 270px;
+      font-size: 250px;
       font-weight: 700;
       letter-spacing: 1px;
       text-align: right;
-      margin-top: 20px;
+      margin-top: 50px;
       margin-bottom: 100px;
 
     }
 
-  main {
-      border: 1px solid rgb(255, 255, 255);
-      padding: 100px;
-    }
-
-     /* Focus Indicator */
+     /* Focus Indicator is needed since cursor was removed */
      :focus {
       outline: 3px solid blue;
       outline-offset: 2px;
      }
+    #phrase {
+      font-size: 40px;
+      font-weight: 400;
+      text-align: right;
+      letter-spacing: 2px;
+      position: relative,
+    }
 
+    /* Circle Animation */
+    .highlight-animation {
+      animation: circleAnimation 1.5s ease-in-out forwards;
+      border: 3px solid yellow;
+      border-radius: 100px;
+      padding: 50px;
+      margin-left: 50px;
+      margin-bottom: 50px;
+      margin-right: 50px;
+      box-sizing: border-box;
+    }
 
+    @keyframes circleAnimation {
+      from {
+        outline: 0px solid transparent;
+      }
+      to {
+        outline: 7px solid yellow; /* Yellow outline around the element */
+        border-radius: 150px;
+      }
+    }
+
+    #tipp {
+      font-size: 17px;
+      color: yellow;
+      letter-spacing: 5px;
+      text-align: center;
+      margin-top: 50px;
+      margin-bottom: 50px;
+      position: relative;
+    }
+    main {
+        margin: 100px auto;
+        padding: 80px;
+        background-color: black;
+        border-radius: 30px;
+        color: white;
+        font-size: 18px;
+        line-height: 1.7;
+    }
+
+    h2 {
+        color: white;
+        font-size: 25px;
+        font-weight: 900;
+        margin-bottom: 40px;
+        letter-spacing: 5px
+    }
+
+    h3 {
+        color: #ffd700;
+        font-size: 18px;
+        margin-top: 15px;
+        margin-bottom: 10px;
+        font-weight: 300px;
+        letter-spacing: 3px;
+    }
+
+    p1 {
+        margin-bottom: 25px;
+        display: block;
+        font-size: 20px;
+      }
+
+      game {
+      background-color: #000;
+      border-radius: 50px;
+      color: white;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      padding-bottom: 100px;
+    }
+
+    .game-container {
+      display: grid;
+      grid-template-columns: repeat(3, 100px);
+      grid-gap: 20px;
+    }
+
+    button {
+      width: 100px;
+      height: 100px;
+      background-color: white;
+      color: black;
+      border: 2px solid #555;
+      border-radius: 20px;
+      font-size: 16px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s, transform 0.2s;
+    }
+
+    button:focus {
+      outline: 5px solid yellow;
+      outline-offset: 2px;
+      background-color: white;
+      transform: scale(1.1);
+    }
+    
   </style>
 </head>
 <body>
@@ -128,58 +230,79 @@
     <figure>
       <img src="keyboard2.png" alt="Macbook keyboard" style="position: relative; top: 480px">
       <figcaption>The Keyboard</figcaption>
+        <div id="phrase">can be used to control a computer interface through the use of keyboards, bypassing the need for a mouse or touchpad.</div>
+        <div id="tipp"> Tip: Press the "L Key".</div>
     <main>
-    <p1>
-      Keyboard navigation is a method of controlling a computer interface through the use of keyboards, bypassing the need for a mouse or touchpad.
-    </p1>
-    <h2>Browsing with a keyboard - The concept</h2>
+    <h2>Browsing with a keyboard</h2>
     <p1>
       Keyboard navigation enables you to navigate through menus, select buttons and interact with various web elements relying entirely on keystrokes.
     </p1>
     <h2>Reasons for use</h2>
     <h3>Accessibility:</h3>
     <p1>
-      Enhancing web accessibility, keyboard navigation provides an alternative means of web interaction for users with disabilities such as motor impairments or users who rely on a keyboard in tandem with their screen reader. It allows users to navigate web pages using the keyboard alone, making websites accessible to a broader audience.
+      Enhancing web accessibility, keyboard navigation provides an alternative means of web interaction for users with disabilities such as motor impairments or users who rely on a keyboard in tandem with their screen reader.
+      It allows users to navigate web pages using the keyboard alone, making websites accessible to a broader audience.
     </p1>
     <h3>Productivity:</h3>
     <p1>
-      Keyboard navigation is useful for users who prefer keyboard shortcuts for efficiency and speed. This efficiency is valuable in professional settings where saving time translates to increased productivity.
+      Keyboard navigation is useful for users who prefer keyboard shortcuts for efficiency and speed.
+      This efficiency is valuable in professional settings where saving time translates to increased productivity.
     </p1>
+
     <h3>Nostalgia:</h3>
     <p1>
-      Keyboard navigation is also used by a number of people who prefer a more "old-school" way of operating a computer. Keyboard navigation enhances web browsing for all types of users. Overall this inclusivity promotes a more equitable digital environment and allows individuals to navigate web content in their preferred manner.
+      Keyboard navigation is also used by a number of people who prefer a more "old-school" way of operating a computer.
+      Keyboard navigation enhances web browsing for all types of users.
+      Overall this inclusivity promotes a more equitable digital environment and allows individuals to navigate web content in their preferred manner.
     </p1>
     <h2>The Concept</h2>
     <p1>
-      Keyboard navigation relies on the browser's ability to recognize + respond to specific key presses, which triggers certain actions. There are certain keys that play important roles in facilitating user interaction. These include:
+      Keyboard navigation relies on the browser's ability to recognize and respond to specific key presses, which triggers certain actions.
+      There are certain keys that play important roles in facilitating user interaction.
     </p1>
-    <h3>Tab key:
+    <h2>Standard Navigation keys</h2>
+    <h3>Tab key
     </h3>
     <p1>
       Is one of the vital keys. The Tab key is used to navigate through interactive elements on a web page and moves the focus forward through interactive page elements. It's essential for traversing links, buttons, and form fields in a logical order (e.g., for English pages, this means seamless navigation from left to right and from top to bottom)    
     </p1>
-    <h3>Shift + Tab:
-    </h3>
-    <p1>
-      Works in conjunction with the Tab key to move the focus backward, allowing users to navigate in reverse order.
-    </p1>
-    <h3>Enter key/Spacebar:</h3>
+    <div>
+      <img src="Tabkey.png" alt="Tab-Key Icon" style="width: 80px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
+    </div>
+    <h3>Enter key</h3>
     <p1>
       Activates the focused element, equivalent to clicking with a mouse. It's commonly used for interacting with buttons, form fields, and links.
     </p1>
-    <h3>Arrow keys:</h3>
+    <img src="enterkey.png" alt="Enter-Key Icon" style="width: 80px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
+
+    <h3>Arrow keys</h3>
     <p1>
       Navigate between items within a component, such as dropdown menus or a group of radio buttons, offering precise control.
     </p1>
-    <h3>Esc key:</h3>
+    <img src="arrowkeys.png" alt="Arrow-Keys Icon" style="width: 100px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
+    <h3>Esc key</h3>
     <p1>
       Often used to close or exit modal windows, dropdowns, or dialogues, providing a way to back out of current interactions.
     </p1>
+    <img src="esckey.png" alt="Esc-Key Icon" style="width: 100px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
     <h2>What is a Focus indicator?</h2>
     <p1>
-      Key success criteria include the element of a focus indicator. A focus indicator is presented when interactive elements are in focus. This ensures that keyboard users have a visual indication of the control that they are currently interacting with.
+      A key element of keyboard navigation is the focus indicator. A focus indicator is presented when interactive elements are in focus. This ensures that keyboard users have a visual indication of the control that they are currently interacting with.
     </p1>
-    <h2>Standard Navigation keys</h2>
+    <game>
+      <div id="tipp">Tip: Press the "Tab Key"</div>
+      <div class="game-container">
+        <button>1</button>
+        <button>2</button>
+        <button>3</button>
+        <button>4</button>
+        <button>5</button>
+        <button>6</button>
+        <button>7</button>
+        <button>8</button>
+        <button>9</button>
+      </div>
+    </game>
   </main>
   </figure>
   </div>
@@ -223,7 +346,21 @@
       } else if (e.key === 'ArrowUp') {
         window.scrollBy(0, -50);
       }
-    });
+    })
+    
+    // Track if the animation is already applied
+    let animationApplied = false;
+    // Listen for keydown events to detect when the "l" key is pressed
+    document.addEventListener('keydown', (e) => {
+      // If the "l" key is pressed and animation has not been triggered yet
+      if (e.key === 'l' && !animationApplied) {
+        const phrase = document.getElementById('phrase');
+        phrase.classList.add('highlight-animation');
+        animationApplied = true; // Prevent re-triggering the animation
+      }
+    })
+    
+    ;
 
   </script>
 </body>
