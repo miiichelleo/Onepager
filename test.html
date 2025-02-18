@@ -1,27 +1,43 @@
-<game>
-  <div id="tipp">Tip: Press the "Esc Key" to reset the colors!</div>
-  <div class="game-container">
-    <button style="background-color: red;">A</button>
-    <button style="background-color: blue;">B</button>
-    <button style="background-color: green;">C</button>
-    <button style="background-color: yellow;">D</button>
-    <button style="background-color: orange;">E</button>
-    <button style="background-color: purple;">F</button>
-    <button style="background-color: pink;">G</button>
-    <button style="background-color: teal;">H</button>
-    <button style="background-color: gray;">I</button>
-  </div>
-</game>
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Keyboard Navigation</title>
+  <style>
+   body {
+    padding: 2rem;
+    font-family: 'Just Another Hand', cursive;
+    background: #f3f3f3;
+}
 
-<script>
-  // Add an event listener for the "Esc" key to reset button colors
-  document.addEventListener('keydown', (e) => {
-    if (e.key === 'Escape') {
-      const buttons = document.querySelectorAll('.game-container:last-of-type button');
-      buttons.forEach((button) => {
-        button.style.backgroundColor = 'white'; // Reset to white background
-        button.style.color = 'black'; // Ensure text is visible
-      });
+.sketchy {
+    padding: 4rem 8rem;
+    display: inline-block;
+    border: 3px solid #333333;
+    font-size: 2.5rem;
+    border-radius: 2% 6% 5% 4% / 1% 1% 2% 4%;
+    text-transform: uppercase;
+    letter-spacing: 0.3ch;
+    background: #ffffff;
+    position: relative;
+    
+    &::before {
+        content: '';
+        border: 2px solid #353535;
+        display: block;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate3d(-50%, -50%, 0) scale(1.015) rotate(0.5deg);
+        border-radius: 1% 1% 2% 4% / 2% 6% 5% 4%;
     }
-  });
-</script>
+}
+  </style>
+</head>
+<body>
+  <div class="sketchy">Sketchy lines</div>
+</body>
+</html>

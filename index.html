@@ -7,15 +7,15 @@
   <style>
     body {
       margin: 0;
-      font-family: Arial, sans-serif;
+      font-family: "Manrope", sans-serif;
       display: flex;
       flex-direction: column;
       justify-content: center;
       align-items: center;
       height: 100vh;
       overflow: hidden; /* Disable scrolling entirely */
-      background-color: black;
-      color: white;
+      background-color: white;
+      color: black;
       cursor: none; /* Remove cursor */
     }
 
@@ -31,7 +31,7 @@
     }
 
     #typing {
-      border-right: 3px solid yellow;
+      border-right: 3px solid rgba(238, 238, 2, 0.756);
       white-space: nowrap;
       overflow: hidden;
       width: 0;
@@ -43,7 +43,7 @@
         width: 0;
       }
       to {
-        width: 20ch; /* Adjust the width to fit the text length */
+        width: 20ch;
       }
     }
 
@@ -58,8 +58,8 @@
       position: fixed;
       top: 0;
       width: 100%;
-      background-color: rgb(255, 255, 255);
-      color: rgb(0, 0, 0);
+      background-color: white;
+      color: black;
       text-align: center;
       font-size: 13px;
       padding: 20px 20px;
@@ -69,10 +69,14 @@
 
 
     }
+    #header span {
+     font-weight: bolder;
+    }
+
     #content {
       display: none;
-      color: white;
-      margin-top: 270vh;
+      color: black;
+      margin-top: 500vh;
       margin-bottom: 20vh;
       margin-left: auto;
       margin-right: auto;
@@ -93,6 +97,11 @@
       margin-left: 20px;
       
     }
+    img:focus {
+    outline: 5px solid  #555;
+    outline-offset: 2px;
+    transform: scale(1.1);
+}
     
     figcaption {
       font-size: 250px;
@@ -106,7 +115,7 @@
 
      /* Focus Indicator is needed since cursor was removed */
      :focus {
-      outline: 3px solid blue;
+      outline: 3px solid #555;
       outline-offset: 2px;
      }
     #phrase {
@@ -120,7 +129,7 @@
     /* Circle Animation */
     .highlight-animation {
       animation: circleAnimation 1.5s ease-in-out forwards;
-      border: 3px solid yellow;
+      border: 3px solid  rgba(238, 238, 2, 0.756);
       border-radius: 100px;
       padding: 50px;
       margin-left: 50px;
@@ -134,55 +143,73 @@
         outline: 0px solid transparent;
       }
       to {
-        outline: 7px solid yellow; /* Yellow outline around the element */
+        outline: 7px solid rgba(238, 238, 2, 0.756); /* Yellow outline around the element */
         border-radius: 150px;
       }
     }
 
     #tipp {
       font-size: 17px;
-      color: yellow;
+      font-weight: 500;
+      font-style: italic;
+      color: rgb(103, 103, 103);
       letter-spacing: 5px;
       text-align: center;
-      margin-top: 50px;
-      margin-bottom: 50px;
+      margin-top: 80px;
+      margin-bottom: 0px;
       position: relative;
     }
+ 
+    hr {
+      border: none; 
+      width: 100%; 
+      height: 2px;
+      background-color: rgba(238, 238, 2, 0.756);
+      margin-top: 200px;
+    }
+
     main {
-        margin: 100px auto;
-        padding: 80px;
-        background-color: black;
+        margin: 50px auto;
+        background-color: white;
         border-radius: 30px;
-        color: white;
+        color:  black;
         font-size: 18px;
         line-height: 1.7;
     }
 
     h2 {
-        color: white;
-        font-size: 25px;
+        color: black;
+        font-size: 50px;
         font-weight: 900;
-        margin-bottom: 40px;
-        letter-spacing: 5px
+        letter-spacing: 3px;
+        margin-top: 50px;
+        margin-bottom: 150px;
+      
     }
 
     h3 {
-        color: #ffd700;
-        font-size: 18px;
+        color: rgba(238, 238, 2, 0.756);
+        text-align: left;
+        font-size: 50px;
         margin-top: 15px;
         margin-bottom: 10px;
-        font-weight: 300px;
+        font-weight: 350px;
         letter-spacing: 3px;
+        border: 5px solid rgba(238, 238, 2, 0.756);
+        border-radius: 200px;
+        margin-right: 1000px;
+        padding-left: 10px;
     }
+    
 
     p1 {
         margin-bottom: 25px;
         display: block;
-        font-size: 20px;
+        font-size: 25px;
       }
 
       game {
-      background-color: #000;
+      background-color: black;
       border-radius: 50px;
       color: white;
       font-family: Arial, sans-serif;
@@ -191,6 +218,7 @@
       align-items: center;
       flex-direction: column;
       padding-bottom: 100px;
+      margin-top: 50px;
     }
 
     .game-container {
@@ -203,20 +231,34 @@
       width: 100px;
       height: 100px;
       background-color: white;
-      color: black;
+      color:  #555;
       border: 2px solid #555;
       border-radius: 20px;
       font-size: 16px;
       font-weight: bold;
-      cursor: pointer;
       transition: background-color 0.3s, transform 0.2s;
     }
 
     button:focus {
-      outline: 5px solid yellow;
+      outline: 5px solid  #555;
       outline-offset: 2px;
-      background-color: white;
+      border: 2px solid white;
+      background-color:  black;
+      color: white;
       transform: scale(1.1);
+  
+    }
+    #footer {
+    display: block; 
+    position:relative; 
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background-color: white;
+    color: black;
+    text-align: center;
+    font-size: 15px;
+    padding: 20px 20px;
     }
     
   </style>
@@ -225,31 +267,32 @@
   <div id="intro">
     <span id="typing">keyboard navigation</span>
   </div>
-  <div id="header">Note: The following page can only be navigated using the keyboard</div>
+  <div id="header"><span>Note</span>: The following page can only be navigated using the keyboard</div>
   <div id="content">
     <figure>
       <img src="keyboard2.png" alt="Macbook keyboard" style="position: relative; top: 480px">
       <figcaption>The Keyboard</figcaption>
-        <div id="phrase">can be used to control a computer interface through the use of keyboards, bypassing the need for a mouse or touchpad.</div>
-        <div id="tipp"> Tip: Press the "L Key".</div>
+        <div id="phrase">can be used to control a computer interface by pressing keys, bypassing the need for a mouse or touchpad.</div>
+        <div id="tipp"> Tip: Press the "L Key"</div>
+        <hr>
     <main>
     <h2>Browsing with a keyboard</h2>
     <p1>
       Keyboard navigation enables you to navigate through menus, select buttons and interact with various web elements relying entirely on keystrokes.
     </p1>
     <h2>Reasons for use</h2>
-    <h3>Accessibility:</h3>
+    <h3>Accessibility</h3>
     <p1>
       Enhancing web accessibility, keyboard navigation provides an alternative means of web interaction for users with disabilities such as motor impairments or users who rely on a keyboard in tandem with their screen reader.
       It allows users to navigate web pages using the keyboard alone, making websites accessible to a broader audience.
     </p1>
-    <h3>Productivity:</h3>
+    <h3>Productivity</h3>
     <p1>
       Keyboard navigation is useful for users who prefer keyboard shortcuts for efficiency and speed.
       This efficiency is valuable in professional settings where saving time translates to increased productivity.
     </p1>
 
-    <h3>Nostalgia:</h3>
+    <h3>Nostalgia</h3>
     <p1>
       Keyboard navigation is also used by a number of people who prefer a more "old-school" way of operating a computer.
       Keyboard navigation enhances web browsing for all types of users.
@@ -267,24 +310,25 @@
       Is one of the vital keys. The Tab key is used to navigate through interactive elements on a web page and moves the focus forward through interactive page elements. It's essential for traversing links, buttons, and form fields in a logical order (e.g., for English pages, this means seamless navigation from left to right and from top to bottom)    
     </p1>
     <div>
-      <img src="Tabkey.png" alt="Tab-Key Icon" style="width: 80px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
+      <img src="Tabkey.png" alt="Tab-Key Icon" style="width: 80px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;" tabindex="0">
     </div>
     <h3>Enter key</h3>
     <p1>
       Activates the focused element, equivalent to clicking with a mouse. It's commonly used for interacting with buttons, form fields, and links.
     </p1>
-    <img src="enterkey.png" alt="Enter-Key Icon" style="width: 80px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
+    <img id="enterKeyImg" src="enterkey.png" alt="Enter-Key Icon" style="width: 80px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;" tabindex="-1">
 
-    <h3>Arrow keys</h3>
+    <h3>Arrow keys<br />
+      (left & right) </h3>
     <p1>
       Navigate between items within a component, such as dropdown menus or a group of radio buttons, offering precise control.
     </p1>
-    <img src="arrowkeys.png" alt="Arrow-Keys Icon" style="width: 100px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
+    <img id="arrowKeyImg"src="arrowkeys.png" alt="Arrow-Keys Icon" style="width: 100px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;" tabindex="-1">
     <h3>Esc key</h3>
     <p1>
       Often used to close or exit modal windows, dropdowns, or dialogues, providing a way to back out of current interactions.
     </p1>
-    <img src="esckey.png" alt="Esc-Key Icon" style="width: 100px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;">
+    <img id="escKeyImg"src="esckey.png" alt="Esc-Key Icon" style="width: 100px; height: 80px; display: block; margin: 10px auto; border: solid 3px yellow; border-radius: 15px;" tabindex="-1" >
     <h2>What is a Focus indicator?</h2>
     <p1>
       A key element of keyboard navigation is the focus indicator. A focus indicator is presented when interactive elements are in focus. This ensures that keyboard users have a visual indication of the control that they are currently interacting with.
@@ -304,6 +348,7 @@
       </div>
     </game>
   </main>
+  <div id="footer">Sources: </div>
   </figure>
   </div>
 
@@ -359,7 +404,29 @@
         animationApplied = true; // Prevent re-triggering the animation
       }
     })
-    
+    // Make the enterkey.png focusable only by pressing Enter
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Enter') {
+      const enterKeyImg = document.getElementById('enterKeyImg');
+      enterKeyImg.focus();
+    }
+  })
+        // Make the arrowkeys.png focusable only by pressing the arrow keys
+        document.addEventListener('keydown', (e) => {
+    if (e.key === 'ArrowLeft' || e.key === 'ArrowRight') {
+      const arrowKeyImg = document.getElementById('arrowKeyImg');
+      arrowKeyImg.focus();
+    }
+  })
+  
+      // Make the esckey.png focusable only by pressing esc
+      document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape') {
+      const escKeyImg = document.getElementById('escKeyImg');
+      escKeyImg.focus();
+    }
+  })
+  
     ;
 
   </script>
